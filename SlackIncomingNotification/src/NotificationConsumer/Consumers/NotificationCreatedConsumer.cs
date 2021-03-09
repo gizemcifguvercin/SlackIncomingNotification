@@ -6,15 +6,15 @@ using Shared;
 
 namespace NotificationConsumer.Consumers
 {
-    public class NotificationCreatedConsumer : IConsumer<WeatherForecast>
+    public class NotificationCreatedConsumer : IConsumer<ViewModel>
     {
-        public async Task Consume(ConsumeContext<WeatherForecast> context)
+        public async Task Consume(ConsumeContext<ViewModel> context)
         {
             try
             {
                 var handler =
                     (NotificationCreatedEventHandler) ServiceManager.ServiceProvider.GetService(
-                        typeof(IEventHandler<WeatherForecast>));
+                        typeof(IEventHandler<ViewModel>));
 
                 await handler.Handle(context.Message);
             }

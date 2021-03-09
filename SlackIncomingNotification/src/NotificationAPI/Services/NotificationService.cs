@@ -17,7 +17,7 @@ namespace NotificationAPI.Services
             _bus = bus ?? throw new ArgumentNullException(nameof(bus));
             _configuration = configuration ?? throw new ArgumentNullException(nameof(configuration));
         }
-        public async Task SendMessageToBus(WeatherForecast @event)
+        public async Task SendMessageToBus(ViewModel @event)
         {
             try
             {

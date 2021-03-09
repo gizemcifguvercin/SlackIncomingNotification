@@ -5,6 +5,6 @@ namespace NotificationAPI.Services
 {
     public interface INotificationService
     {
-          Task SendMessageToBus(WeatherForecast @event);
+          Task SendMessageToBus(ViewModel @event);
     }
 }

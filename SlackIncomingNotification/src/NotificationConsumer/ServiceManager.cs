@@ -18,7 +18,7 @@ namespace NotificationConsumer
             services.AddSingleton<IHostedService, MassTransitHostedService>();
             services.AddSingleton<IBus>(_ => BusFactory.Bus);
 
-            services.AddSingleton(typeof(IEventHandler<WeatherForecast>), typeof(NotificationCreatedEventHandler));
+            services.AddSingleton(typeof(IEventHandler<ViewModel>), typeof(NotificationCreatedEventHandler));
 
             services.AddScoped<ISlackService, SlackService>();
             services.AddHttpClient();
